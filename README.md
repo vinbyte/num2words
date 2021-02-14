@@ -15,7 +15,7 @@ package main
 
 import (
 	"fmt"
-	"github/vinbyte/num2words"
+	"github.com/vinbyte/num2words"
 )
 
 func main() {

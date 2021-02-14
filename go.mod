@@ -1,4 +1,4 @@
-module github/vinbyte/num2words
+module github.com/vinbyte/num2words
 
 go 1.15
 
