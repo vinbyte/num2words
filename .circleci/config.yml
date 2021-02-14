@@ -19,5 +19,6 @@ jobs:
             - "/go/pkg/mod"
       - run:
           name: Run tests
-          command: go test -v -cover -coverprofile=./coverage/lcov.info
-      - coveralls/upload
+          command: go test -v -cover -coverprofile=coverage.out
+      - coveralls/upload:
+          path_to_lcov: coverage.out
