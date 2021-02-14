@@ -4,7 +4,7 @@ Golang package to convert number into words. For example : `148` become `one hun
 
 ## Install
 
-`go get -u github.com/vinbyte/num2words`
+Run `go get -u github.com/vinbyte/num2words`
 
 ## Usage
 
@@ -26,4 +26,4 @@ func main() {
 
 ## Test
 
-`go test -v`
+Run `go test -v`
