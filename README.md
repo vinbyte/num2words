@@ -1,6 +1,6 @@
-# Number to Word
+# Number to Words
 
-Golang package to convert number into word. For example : `48` become `forty-eight`. Inspired by this python library [num2words](https://github.com/savoirfairelinux/num2words).
+Golang package to convert number into words. For example : `148` become `one hundred forty-eight`. Inspired by this python library [num2words](https://github.com/savoirfairelinux/num2words).
 
 ## Install
 
