@@ -1,5 +1,7 @@
 # Number to Words
 
+[![CircleCI](https://circleci.com/gh/vinbyte/num2words.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs) [![Coverage Status](https://coveralls.io/repos/github/vinbyte/num2words/badge.svg?branch=main)](https://coveralls.io/github/vinbyte/num2words?branch=main)
+
 Golang package to convert number into words. For example : `148` become `one hundred forty-eight`. Inspired by this python library [num2words](https://github.com/savoirfairelinux/num2words).
 
 ## Install
