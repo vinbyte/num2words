@@ -1,12 +1,15 @@
 package num2words
 
 import (
+	"strconv"
 	"strings"
 )
 
 func init() {
 	l := N2w{
-		NumberToWord: numberToWordEn,
+		NumberToWord:       numberToWordEn,
+		NumberToOrdinal:    numberToOrdinalEn,
+		NumberToOrdinalNum: numberToOrdinalNumEn,
 	}
 	languages["en"] = &l
 }
@@ -60,4 +63,46 @@ func numberToWordEn(number int64) string {
 	}
 
 	return strings.Join(words, " ")
+}
+
+func numberToOrdinalEn(number int64) string {
+	ordinalWords := make(map[string]string)
+	ordinalWords["zero"] = "zeroth"
+	ordinalWords["one"] = "first"
+	ordinalWords["two"] = "second"
+	ordinalWords["three"] = "third"
+	ordinalWords["four"] = "fourth"
+	ordinalWords["five"] = "fifth"
+	ordinalWords["six"] = "sixth"
+	ordinalWords["seven"] = "seventh"
+	ordinalWords["eight"] = "eighth"
+	ordinalWords["nine"] = "ninth"
+	ordinalWords["ten"] = "tenth"
+	ordinalWords["eleven"] = "eleventh"
+	ordinalWords["twelve"] = "twelfth"
+	words := numberToWordEn(number)
+	splitWord := strings.Split(words, " ")
+	lastWord := splitWord[len(splitWord)-1]
+	//if any dash separator
+	if strings.Contains(lastWord, "-") {
+		splitDash := strings.Split(lastWord, "-")
+		lastWord = splitDash[len(splitDash)-1]
+		splitWord = splitDash
+	}
+	ords := ordinalWords[lastWord]
+	if ords == "" {
+		lastLetter := string(lastWord[len(lastWord)-1])
+		if lastLetter == "y" {
+			lastWord = lastWord[:len(lastWord)-1] + "ie"
+		}
+		ords = lastWord + "th"
+	}
+	splitWord[len(splitWord)-1] = ords
+	return strings.Join(splitWord, " ")
+}
+
+func numberToOrdinalNumEn(number int64) string {
+	words := numberToOrdinalEn(number)
+	numStr := strconv.FormatInt(number, 10)
+	return numStr + words[len(words)-2:]
 }

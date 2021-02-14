@@ -2,9 +2,9 @@ package num2words
 
 // N2w hold some function represent its feature
 type N2w struct {
-	NumberToWord func(int64) string
-	// NumberToOrdinal    func(int64) string
-	// NumberToOrdinalNum func(int64) string
+	NumberToWord       func(int64) string
+	NumberToOrdinal    func(int64) string
+	NumberToOrdinalNum func(int64) string
 }
 
 var languages = make(map[string]*N2w)
